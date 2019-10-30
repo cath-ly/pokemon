@@ -31,32 +31,49 @@ Promise.all(UrlArray).then(function(values)
     function(Error){
         console.log("fail", Error)
 } )
-    
- var getmon = function(pokedex)
-        {
-    d3.select(".PokNames")
+   
+var descript = function(Pokemon)
+{
+    return d3.select(".pokInfo")
         .selectAll("div")
-        .data(pokedex)
+        .data(region.descriptions)
         .enter()
         .append("div")
-        .attr("class", "PokNames")
+        .attr("class", "PokDescription")
         .text(function(d){
-        console.log(d.name)
-            return d.name; })
-            }
+           // console.log(d)
+            return d.descriptions.description; })
+}
+ var getmon = function(region)
+        {
+           // console.log(region)
+        return d3.select(".PokNames")
+        .selectAll("div")
+        .data(region.pokemon_entries)
+        .enter()
+        .append("div")
+        .attr("class", "Pokemons")
+        .text(function(d){
+           // console.log(d)
+          //  return d.pokemon_species.name;
+        .on("click", function(Pokemon){
+     descript(Pokemon)
+            })
+        }
             
-var getRegion= function(pokedex)
+var getRegion= function(Regions)
 {
     d3.select(".Regions")
     .selectAll("div")
-    .data(pokedex)
+    .data(Regions)
     .enter()
     .append("div")
     .attr("id", "Regions")
     .text(function(d){
         return d.name;})
-    .on("click", function(p){
-     getmon(p)
+    .on("click", function(region){
+     getmon(region)
+        
     
     })
 }
