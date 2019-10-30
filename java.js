@@ -32,35 +32,6 @@ Promise.all(UrlArray).then(function(values)
         console.log("fail", Error)
 } )
    
-var descript = function(Pokemon)
-{
-    return d3.select(".pokInfo")
-        .selectAll("div")
-        .data(region.descriptions)
-        .enter()
-        .append("div")
-        .attr("class", "PokDescription")
-        .text(function(d){
-           // console.log(d)
-            return d.descriptions.description; })
-}
- var getmon = function(region)
-        {
-           // console.log(region)
-        return d3.select(".PokNames")
-        .selectAll("div")
-        .data(region.pokemon_entries)
-        .enter()
-        .append("div")
-        .attr("class", "Pokemons")
-        .text(function(d){
-           // console.log(d)
-          //  return d.pokemon_species.name;
-        .on("click", function(Pokemon){
-     descript(Pokemon)
-            })
-        }
-            
 var getRegion= function(Regions)
 {
     d3.select(".Regions")
@@ -77,4 +48,35 @@ var getRegion= function(Regions)
     
     })
 }
+
+ var getmon = function(region)
+        {
+           // console.log(region)
+        return d3.select(".PokNames")
+        .selectAll("div")
+        .data(region.pokemon_entries)
+        .enter()
+        .append("div")
+        .attr("id", "Pokemons")
+        .text(function(d){
+           // console.log(d)
+            return d.pokemon_species.name;})
+        .on("click", function(Pokemon){
+     descript(region)
+            })
+        }
+ var descript = function(region)
+{
+    //console.log(region.descriptions[0])
+    return d3.select(".Description")
+        .selectAll("div")
+        .data(region.descriptions)
+        .enter()
+        .append("div")
+        .attr("class", "PokDescription")
+        .text(function(d){
+           // console.log(d)
+            return d.description; })
+}
+            
 
