@@ -43,7 +43,7 @@ var getRegion= function(Regions)
     .text(function(d){
         return d.name;})
     .on("click", function(region){
-     getmon(region)
+      onscroll= getmon(region)
         
     
     })
