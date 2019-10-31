@@ -51,6 +51,7 @@ var getRegion= function(Regions)
  var getmon = function(region)
         {
            // console.log(region)
+        remove()
         return d3.select(".PokNames")
         .selectAll("div")
         .data(region.pokemon_entries)
@@ -84,5 +85,5 @@ var getRegion= function(Regions)
    
 
  var remove = function(){
-     d3.selectAll("#PokDescription *").remove()
+     d3.select("#PokDescription *").remove()
  }
