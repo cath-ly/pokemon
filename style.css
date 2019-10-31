@@ -11,7 +11,6 @@ body{
   background-color: white;
   display: grid;
   grid-template-columns: auto ;
-  float: right;
   height: 100%;
     width: 28%;
     text-align: center;
@@ -21,6 +20,7 @@ body{
 .span{
 
     background-color: antiquewhite;
+    float: left;
 }
 
 .PokNames{
@@ -33,7 +33,6 @@ body{
   height: 100%;
   width: 28%;
   clear: left;
-  float: right;
   overflow:auto;
 
 }
@@ -47,5 +46,5 @@ body{
   
   height: 100%;
   width: 28%;
-  float: left;
+  float: right;
 }
