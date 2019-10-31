@@ -43,8 +43,12 @@ var getRegion= function(Regions)
     .text(function(d){
         return d.name;})
     .on("click", function(region){
+<<<<<<< HEAD
       onscroll= getmon(region)
         
+=======
+     getmon(region)
+>>>>>>> e3dabf0a0b1febda4bd612d7eac93b46417576fd
     
     })
 }
@@ -52,31 +56,52 @@ var getRegion= function(Regions)
  var getmon = function(region)
         {
            // console.log(region)
+            remove()
         return d3.select(".PokNames")
         .selectAll("div")
         .data(region.pokemon_entries)
         .enter()
         .append("div")
-        .attr("id", "Pokemons")
+        .attr("class", "Pokemons")
         .text(function(d){
            // console.log(d)
             return d.pokemon_species.name;})
         .on("click", function(Pokemon){
-     descript(region)
-            })
-        }
+      d3.select(".Description").append("div")
+          .text(
+           // console.log(d)
+             Pokemon.pokemon_species.url)})
+}
+ 
+            
  var descript = function(region)
 {
     //console.log(region.descriptions[0])
     return d3.select(".Description")
         .selectAll("div")
-        .data(region.descriptions)
+        .data(region.pokemon_entries)
         .enter()
         .append("div")
-        .attr("class", "PokDescription")
-        .text(function(d){
+        .attr("id", "PokDescription")
+        .text( function(d){
            // console.log(d)
-            return d.description; })
+            return d.pokemon_species.url;})
 }
-            
+   
+<<<<<<< HEAD
+ var Remove= function(){
+ getmon().remove;
 
+     
+ }
+
+
+=======
+ var remove= function(){d3.selectAll("#PokDescription *").remove()}
+ //.on("click", function(Pokemon){
+//     remove()
+>>>>>>> d072a5bcad8b93fc25431b6f14412f8e666bbdde
+// }
+// )
+            //                 }
+//
