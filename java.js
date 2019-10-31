@@ -44,7 +44,6 @@ var getRegion= function(Regions)
         return d.name;})
     .on("click", function(region){
      getmon(region)
-        
     
     })
 }
@@ -57,26 +56,30 @@ var getRegion= function(Regions)
         .data(region.pokemon_entries)
         .enter()
         .append("div")
-        .attr("id", "Pokemons")
+        .attr("class", "Pokemons")
         .text(function(d){
            // console.log(d)
             return d.pokemon_species.name;})
         .on("click", function(Pokemon){
-     descript(region)
-            })
-        }
+      d3.select(".Description").append("div")
+          .text(
+           // console.log(d)
+             Pokemon.pokemon_species.url)})
+}
+ 
+            
  var descript = function(region)
 {
     //console.log(region.descriptions[0])
     return d3.select(".Description")
         .selectAll("div")
-        .data(region.descriptions)
+        .data(region.pokemon_entries)
         .enter()
         .append("div")
-        .attr("class", "PokDescription")
-        .text(function(d){
+        .attr("src", "PokDescription")
+        .text( function(d){
            // console.log(d)
-            return d.description; })
+            return d.pokemon_species.url;})
 }
             
 
