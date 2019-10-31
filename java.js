@@ -51,6 +51,7 @@ var getRegion= function(Regions)
  var getmon = function(region)
         {
            // console.log(region)
+            remove()
         return d3.select(".PokNames")
         .selectAll("div")
         .data(region.pokemon_entries)
@@ -76,13 +77,13 @@ var getRegion= function(Regions)
         .data(region.pokemon_entries)
         .enter()
         .append("div")
-        .attr("src", "PokDescription")
+        .attr("id", "PokDescription")
         .text( function(d){
            // console.log(d)
             return d.pokemon_species.url;})
 }
    
- var Remove= function(){ }
+ var remove= function(){d3.selectAll("#PokDescription *").remove()}
  //.on("click", function(Pokemon){
 //     remove()
 // }
