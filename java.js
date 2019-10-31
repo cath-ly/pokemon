@@ -81,5 +81,11 @@ var getRegion= function(Regions)
            // console.log(d)
             return d.pokemon_species.url;})
 }
-            
-
+   
+ var Remove= function(){ }
+ //.on("click", function(Pokemon){
+//     remove()
+// }
+// )
+            //                 }
+//
