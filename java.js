@@ -85,5 +85,6 @@ var getRegion= function(Regions)
    
 
  var remove = function(){
-     d3.select("#PokDescription *").remove()
+     d3.select(".PokNames *").remove()
+     d3.select(".Description *").remove()
  }
