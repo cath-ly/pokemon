@@ -53,5 +53,6 @@ body{
   width: 25%;
   float:right;
   background-color: lightgrey;
-  background: rgba(76, 175, 80, 0.3)
+  background: rgba(76, 175, 80, 0.3);
+    overflow:auto;
 }

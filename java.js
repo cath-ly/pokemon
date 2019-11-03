@@ -69,7 +69,7 @@ var getRegion= function(Regions)
             var pokePromise=d3.json(Pokemon.pokemon_species.url)
             pokePromise.then(function(pok){
                 console.log("yay",pok)
-                descript(Pokemon.flavor_text);
+                descript(pok)
             },
             function(err){
                console.log("yikes", err); 
@@ -87,7 +87,10 @@ var descript = function(des){
              .enter()
              .append("div")
              .attr("src", "PokDescription")
-
+             .text(function(d){
+                   console.log(d)
+                   return d.flavor_text
+                   })
 }
             
  // var descript = function(region)
