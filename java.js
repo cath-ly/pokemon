@@ -31,9 +31,12 @@ Promise.all(UrlArray).then(function(values)
     function(Error){
         console.log("fail", Error)
 } )
+
+// var pokePromise = d3.json("https://pokeapi.co/api/v2/pokemon_species/")
    
 var getRegion= function(Regions)
-{
+{   
+    remove()
     d3.select(".Regions")
     .selectAll("div")
     .data(Regions)
@@ -58,33 +61,51 @@ var getRegion= function(Regions)
         .enter()
         .append("div")
         .attr("class", "Pokemons")
+        .text("Select a Pokemon")
         .text(function(d){
            // console.log(d)
             return d.pokemon_species.name;})
         .on("click", function(Pokemon){
+            var pokePromise=d3.json(Pokemon.pokemon_species.url)
+            pokePromise.then(function(pok){
+                console.log("yay",pok)
+                descript(Pokemon.flavor_text);
+            },
+            function(err){
+               console.log("yikes", err); 
+            });
       d3.select(".Description").append("div")
           .text(
            // console.log(d)
-             Pokemon.pokemon_species.url)})
+             "Here is the Pokemon")})
 }
  
-            
- var descript = function(region)
-{
-    //console.log(region.descriptions[0])
+var descript = function(des){
     return d3.select(".Description")
-        .selectAll("div")
-        .data(region.pokemon_entries)
-        .enter()
-        .append("div")
-        .attr("src", "PokDescription")
-        .text( function(d){
-           // console.log(d)
-            return d.pokemon_species.url;})
+             .selectAll("div")
+             .data(des.flavor_text_entries)
+             .enter()
+             .append("div")
+             .attr("src", "PokDescription")
+
 }
+            
+ // var descript = function(region)
+// {
+    //console.log(region.descriptions[0])
+//    return d3.select(".Description")
+  //      .selectAll("div")
+    //    .data(region.pokemon_entries)
+      //  .enter()
+        //.append("div")
+    //.attr("src", "PokDescription")
+    //    .text( function(d){
+           // console.log(d)
+//            return d.pokemon_species.url;})
+// }
    
 
  var remove = function(){
-     d3.select(".PokNames *").remove()
-     d3.select(".Description *").remove()
+     d3.selectAll(".PokNames *").remove()
+     d3.selectAll(".Description *").remove()
  }
