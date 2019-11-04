@@ -1,14 +1,19 @@
 body{
     background-color:antiquewhite;
+<<<<<<< HEAD
     background-image: url("pokeball.jpg")
+=======
+    background: url(pokeball.jpg)
+>>>>>>> origin
     
 }
 
 .Regions{
   padding: 10px 10px 20px 10px;
-  border: 5px solid #BFBFBF;
-  margin: 27px;
-  background-color: white;
+  border: 10px solid black;
+  margin: 22px;
+  background-color: lightgrey;
+    border-style: double;
   display: grid;
   grid-template-columns: auto ;
   height: 100%;
@@ -16,15 +21,18 @@ body{
     text-align: center;
     float:left;
     clear: left;
+    background: rgba(76, 175, 80, 0.3)
+   
   
 }
 
 .PokNames{
   padding:
   10px 10px 20px 10px;
-  margin: 25px;
-  border: 5px solid #BFBFBF;
+  margin: 20px;
+  border: 10px solid black;
   background-color: white;
+   border-style: double;
   display: grid;
   grid-template-columns: auto ;
   height: 100%;
@@ -32,17 +40,23 @@ body{
   float: left;
   text-align: center;
   overflow:auto;
+  background-color: lightgrey;
+  background: rgba(76, 175, 80, 0.3)
 
 }
 
 .Description{
   padding:
   10px 10px 20px 10px;
-  margin: 25px;
-  border: 5px solid #BFBFBF;
+  margin: 20px;
+  border: 10px solid black;
   background-color: white;
+  border-style: double;
   text-align: center;
   height: 100%;
   width: 25%;
   float:right;
+  background-color: lightgrey;
+  background: rgba(76, 175, 80, 0.3);
+    overflow:auto;
 }
