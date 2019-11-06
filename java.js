@@ -74,24 +74,19 @@ var getRegion= function(Regions)
             function(err){
                console.log("yikes", err); 
             });
+            remove();
       d3.select(".Description").append("div")
           .text(
            // console.log(d)
-             "Here is the Pokemon")})
+             pok.pokemon_species.name)})
 }
  
 var descript = function(des){
     return d3.select(".Description")
-             .selectAll("div")
-             .data(des.flavor_text_entries)
-             .enter()
              .append("div")
              .attr("src", "PokDescription")
-             .text(function(d){
-                   console.log(d)
-                   return d.flavor_text
-                   })
-}
+             .text(des.flavor_text_entries[1].flavor_text)
+} 
             
  // var descript = function(region)
 // {
