@@ -6,6 +6,7 @@ body{
     background: url(pokeball.jpg)
 >>>>>>> origin
     
+    
 }
 
 .Regions{
@@ -21,8 +22,9 @@ body{
     text-align: center;
     float:left;
     clear: left;
-    background: rgba(76, 175, 80, 0.3)
-   
+    background: rgba(76, 175, 80, 0.3);
+   font-family: 'Staatliches', cursive;
+    font-size: 30px;
   
 }
 
@@ -41,8 +43,9 @@ body{
   text-align: center;
   overflow:auto;
   background-color: lightgrey;
-  background: rgba(76, 175, 80, 0.3)
-
+  background: rgba(76, 175, 80, 0.3);
+font-family: 'Staatliches', cursive;
+    font-size: 24px; 
 }
 
 .Description{
@@ -59,4 +62,6 @@ body{
   background-color: lightgrey;
   background: rgba(76, 175, 80, 0.3);
     overflow:auto;
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
 }
